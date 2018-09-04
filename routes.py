@@ -6,25 +6,25 @@ from Calculator import Calculator
 
 @app.route('/', methods=['POST', 'GET'])
 def interest_total():
+    total = "Amount Invested"
     if request.method == 'POST':
         initial = float(request.form["initial"])
         rate = float(request.form["rate"])
         time = float(request.form["time"])
         calc = Calculator(initial,rate)
         total = float(calc.total_interest(time))
-        return render_template('interest_form.html', calc_total=True, total=total)
-    return render_template('interest_form.html', calc_total=True, total=0)
+        
+    return render_template('interest_form.html', calc_total=True, total=total)
 
 
 @app.route('/time', methods=['POST', 'GET'])
 def time_interest():
-    time_final = 0
+    time_final = "Amount Invested"
     if request.method == 'POST':
         initial = float(request.form["initial"])
         rate = float(request.form["rate"])
-        time = float(request.form["time"])
+        total = float(request.form["total"])
         calc = Calculator(initial,rate)
-        total = float(calc.total_interest(time))
         time_final = float(calc.time_required(total))
     
     return render_template('time.html', calc_time_final=True, time_final=time_final)

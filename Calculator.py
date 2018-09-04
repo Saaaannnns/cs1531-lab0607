@@ -9,7 +9,7 @@ class Calculator:
 
     def total_interest(self, time):
         """
-        Returns the total amoun of interest after a given length of time
+        Returns the total amount of interest after a given length of time
         """
         return self._initial * self._rate * time
 

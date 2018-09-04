@@ -15,9 +15,9 @@
 			<label>Time Investment (Year): </label><br/>
 			<input name="time" placeholder="Amount Invested" value="{{time}}" />
 		</div>
-	     <div style="margin: 10px 0px">
+	    <div style="margin: 10px 0px">
 			<label>Total Interest ($): </label><br/>
-			<input name="total" placeholder="Amount Invested" value="{{total}}" {%if total %}{{total}}{%else%}total amount{% endif %}/>
+			<input name="total" placeholder="Amount Invested" value="{{total}}" disabled = "disabled""/>
 		</div>
 		<div style="margin: 10px 0px">
 			<button type="submit">Submit</button>
